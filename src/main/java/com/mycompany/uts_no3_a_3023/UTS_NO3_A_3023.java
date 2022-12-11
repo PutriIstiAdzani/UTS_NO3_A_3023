@@ -6,62 +6,78 @@
 package com.mycompany.uts_no3_a_3023;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Fajar
  */
 public class UTS_NO3_A_3023 {
-
+    
     public static void main(String[] args) {
-        AsistenPraktikum_3023 Asprak1 = new AsistenPraktikum_3023();
-        StudentStaff_3023 SS1 = new StudentStaff_3023();
-        
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
         try{
+            BufferedReader br = new BufferedReader(new InputStreamReader (System.in));
+            AsistenPraktikum_3023 AS = new AsistenPraktikum_3023(null,null,null,0,null,0);
+            StudentStaff_3023 SS = new StudentStaff_3023(null,null,null,0,null,0);
+            
+            ArrayList <AsistenPraktikum_3023> asprak =new ArrayList<>();
+            System.out.print("Jumlah Asisten Praktikum: ");
+            int input = Integer.parseInt(br.readLine());
             System.out.println("=== Input Data Asisten Praktikum ===");
-            System.out.println("NIM : ");
-            Asprak1.nim_3023 = br.readLine();
-            System.out.println("Nama    : ");
-            Asprak1.nama_3023 = br.readLine();
-            System.out.println("Jurusan : ");
-            Asprak1.jurusan_3023 = br.readLine();
-            System.out.println("IPK : ");
-            Asprak1.ipk_3023 = Float.parseFloat(br.readLine());
-            System.out.println("MK Asistensi    : ");
-            Asprak1.mkAsistensi_3023 = br.readLine();
-            System.out.println("Jumlah Pertemuan    : ");
-            Asprak1.jmlPertemuan_3023 = Integer.parseInt(br.readLine());
-            System.out.println(" ");
-            
+            for (int i = 0; i<input; i++){ 
+                System.out.print("NIM                     : " ); 
+                AS.nim_3023 = br.readLine();
+                System.out.print("Nama                    : " );
+                AS.nama_3023 = br.readLine();
+                System.out.print("Jurusan                 : " );
+                AS.jurusan_3023 = br.readLine();
+                System.out.print("IPK                     : " );
+                AS.ipk_3023 = Float.parseFloat(br.readLine());
+                System.out.print("MK Asistentsi           : " );
+                AS.setMkAsistensi_3023(br.readLine());
+                System.out.print("Jumlah Pertemuan        : " );
+                AS.setJmlPertemuan_3023(Integer.parseInt(br.readLine()));
+                asprak.add(AS);
+                System.out.println("");
+            }
+            ArrayList <StudentStaff_3023> stutaf =new ArrayList<>();
+            System.out.print("Jumlah Student Staff    : ");
+            int INPUT = Integer.parseInt(br.readLine());
             System.out.println("=== Input Data Student Staff ===");
-            System.out.println("NIM    : ");
-            SS1.nim_3023 = br.readLine();
-            System.out.println("Nama    : ");
-            SS1.nama_3023 = br.readLine();
-            System.out.println("Jurusan : ");
-            SS1.jurusan_3023 = br.readLine();
-            System.out.println("IPK : ");
-            SS1.ipk_3023 = Float.parseFloat(br.readLine());
-            System.out.println("Unit Kerja  : ");
-            SS1.unitKerja_3023 = br.readLine();
-            System.out.println("Jam Kerja   : ");
-            SS1.jamKerja_3023 = Integer.parseInt(br.readLine());
-            System.out.println(" ");
-            
+            for (int i = 0; i<INPUT; i++){ 
+                System.out.print("NIM                     : "); 
+                SS.nim_3023 = br.readLine();
+                System.out.print("Nama                    : ");
+                SS.nama_3023 = br.readLine();
+                System.out.print("Jurusan                 : ");
+                SS.jurusan_3023 = br.readLine();
+                System.out.print("IPK                     : ");
+                SS.ipk_3023 = Float.parseFloat(br.readLine());
+                System.out.print("Unit Kerja              : ");
+                SS.setUnitKerja_3023(br.readLine());
+                System.out.print("Jam Kerja               : ");
+                SS.setJamKerja_3023(Integer.parseInt(br.readLine()));
+                stutaf.add(SS);
+                System.out.println("");
+            }
+            System.out.println("");
             System.out.println("=== Data Asisten Praktikum ===");
-            Asprak1.tampilDataMhs_3023();
-            System.out.println("Total Pendapatan    : "+Asprak1.totalPendapatan_3023());
-            System.out.println(" ");
+            for(int i = 0; i < asprak.size(); i++){
+                AS.tampilDataMhs_3023();
+            }
+            System.out.println("");
             System.out.println("=== Data Student Staff ===");
-            SS1.tampilDataMhs_3023();
-            System.out.println("Total Pendapatan    : "+SS1.totalPendapatan_3023());
-            System.out.println(" ");
+            for(int i = 0; i < stutaf.size(); i++){
+                SS.tampilDataMhs_3023();
+            }
         }
-        catch(Exception ex){
-            System.out.println("ex");
+        catch(IOException ex){
+            System.out.println(); 
         }
     }
+
 }
+

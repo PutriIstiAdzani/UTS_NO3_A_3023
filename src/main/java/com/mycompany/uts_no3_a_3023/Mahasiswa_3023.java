@@ -8,16 +8,18 @@ package com.mycompany.uts_no3_a_3023;
  *
  * @author Fajar
  */
-public class Mahasiswa_3023 {
+public abstract class Mahasiswa_3023 {
     String nim_3023;
     String nama_3023;
     String jurusan_3023;
     float ipk_3023;
     
-    public void tampilDataMhs_3023(){
-        System.out.println("NIM     : "+nim_3023);
-        System.out.println("Nama    : "+nama_3023);
-        System.out.println("Jurusan : "+jurusan_3023);
-        System.out.println("IPK     : "+ipk_3023);
-    }    
+    public Mahasiswa_3023 (String nim_3023, String nama_3023, String jurusan_3023, float ipk_3023){
+        this.nim_3023 = nim_3023;
+        this.nama_3023 = nama_3023;
+        this.jurusan_3023 = jurusan_3023;
+        this.ipk_3023 = ipk_3023;
+    }
+    
+    public abstract void tampilDataMhs_3023(); 
 }

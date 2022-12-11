@@ -11,34 +11,38 @@ package com.mycompany.uts_no3_a_3023;
 public class StudentStaff_3023 extends Mahasiswa_3023 implements iPendapatan_3023 {
    String unitKerja_3023;
    int jamKerja_3023;
+   double totalPendapatan_3023;
    
-   public String getUnitKerja_3023() {
+   public StudentStaff_3023(String nim_3023,String nama_3023,String jurusan_3023,float ipk_3023, String unitKerja_3023, int jamKerja_3023 ){
+        super(nim_3023, nama_3023, jurusan_3023,ipk_3023);
+        this.unitKerja_3023 = unitKerja_3023;
+        this.jamKerja_3023 = jamKerja_3023;
+    }
+    public String getUnitKerja_3023() {
         return unitKerja_3023;
     }
-
     public void setUnitKerja_3023(String unitKerja_3023) {
         this.unitKerja_3023 = unitKerja_3023;
     }
-
     public int getJamKerja_3023() {
         return jamKerja_3023;
     }
-
     public void setJamKerja_3023(int jamKerja_3023) {
         this.jamKerja_3023 = jamKerja_3023;
     }
-
-   public void tampilDataMhs_3023(){
-       System.out.println("NIM          : "+nim_3023);
-       System.out.println("Nama         : "+nama_3023);
-       System.out.println("Jurusan      : "+jurusan_3023);
-       System.out.println("IPK          : "+ipk_3023);
-       System.out.println("Unit Kerja   : "+unitKerja_3023);
-       System.out.println("Jam Kerja    : "+jamKerja_3023);
-   }
-   
-   public double totalPendapatan_3023(){
-       double totalPendapatan_3023;
-       return totalPendapatan_3023 = jamKerja_3023*30000;
-   }
+    public void tampilDataMhs_3023() {
+        System.out.println("NIM                     : "+ nim_3023);
+        System.out.println("Nama                    : "+ nama_3023);
+        System.out.println("Jurusan                 : "+ jurusan_3023);
+        System.out.println("IPK                     : "+ ipk_3023);
+        System.out.println("Unit Kerja              : "+ unitKerja_3023);
+        System.out.println("Jam Kerja               : "+ jamKerja_3023);
+        System.out.println("--------------------------------------------");
+        System.out.println("Total Pendapatan        : "+ totalPendapatan_3023());
+        System.out.println("");
+    }
+    public double totalPendapatan_3023() {
+        totalPendapatan_3023 = jamKerja_3023 * 30000;
+        return totalPendapatan_3023;
+    }
 }
